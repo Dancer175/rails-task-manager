@@ -1,11 +1,16 @@
-<h1>My tasks</h1>
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= link_to "#{task.title}", task_path(task) %></li>
-    <li><%= link_to "Delete", task_path(task),
-    method: :delete,
-    data: { confirm: "Are you sure?"} %></li>
-  <% end %>
-</ul>
-<br>
-<li><%= link_to "+ Add a new Task", new_task_path %></li>
+<div class="content-box">
+  <div class="content">
+    <h1>My tasks</h1>
+    <ul>
+      <% @tasks.each do |task| %>
+        <li><%= link_to "#{task.title}", task_path(task) %></li>
+        <li class="delete"><%= link_to "Delete", task_path(task),
+        method: :delete,
+        data: { confirm: "Are you sure?"} %></li>
+      <% end %>
+    </ul>
+    <br>
+    <li><%= link_to "+ Add a new Task", new_task_path %></li>
+  </div>
+</div>
+
